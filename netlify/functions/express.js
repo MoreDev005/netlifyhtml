@@ -16,6 +16,6 @@ router.get('/', (req, res) => {
 router.get('/style.css', (req, res) => {
   res.sendFile(path.join(__dirname, '../../public/style.css'));
 });
-app.use("/.netlify/functions", router);
+app.use("/.netlify/functions/express", router);
 // Ekspor aplikasi Express sebagai fungsi serverless
 module.exports.handler = serverless(app);
