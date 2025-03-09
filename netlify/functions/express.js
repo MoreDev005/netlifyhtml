@@ -8,12 +8,12 @@ const router = express.Router();
 app.use(express.static(path.join(__dirname, '../../public')));
 
 // Menangani request untuk root ("/")
-route.get('/', (req, res) => {
+router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../../public/index.html'));
 });
 
 // Menangani request untuk file CSS
-route.get('/style.css', (req, res) => {
+router.get('/style.css', (req, res) => {
   res.sendFile(path.join(__dirname, '../../public/style.css'));
 });
 app.use("/.netlify/functions", router);
